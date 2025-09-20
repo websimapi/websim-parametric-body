@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parametric Body</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-view">
+        <canvas id="game-canvas"></canvas>
+        <div id="controls-hint">Mouse/Touch attracts (hold Shift or two-finger touch to repel)</div>
+    </div>
+
+    <div id="editor-view" class="hidden">
+        <canvas id="editor-canvas"></canvas>
+        <div id="editor-ui">
+            <div class="editor-panel">
+                <h3>Character Editor</h3>
+                <p>Drag points to move them. Select a point to edit its properties.</p>
+                <button id="add-segment-btn">Add Segment</button>
+                <div id="segment-properties" class="hidden">
+                    <h4>Selected Segment</h4>
+                    <label for="radius-input">Aura Radius:</label>
+                    <input type="range" id="radius-input" min="5" max="100" value="40">
+                    <div id="head-properties" class="hidden">
+                        <h5>Head Shape</h5>
+                        <label for="head-width-input">Head Width:</label>
+                        <input type="range" id="head-width-input" min="5" max="150" value="40">
+                        <label for="head-height-input">Head Height:</label>
+                        <input type="range" id="head-height-input" min="5" max="150" value="40">
+                    </div>
+                    <label for="leg-length-input">Leg Length:</label>
+                    <input type="range" id="leg-length-input" min="20" max="150" value="50">
+                    <label for="leg-width-input">Leg Width:</label>
+                    <input type="range" id="leg-width-input" min="4" max="20" value="8">
+                    <button id="add-leg-pair-btn">Add Leg Pair</button>
+                    <button id="remove-leg-pair-btn">Remove Leg Pair</button>
+                    <button id="remove-segment-btn">Remove Segment</button>
+                </div>
+                <div id="body-properties">
+                    <h4>Body Style</h4>
+                    <label for="body-color-input">Body Color:</label>
+                    <input type="color" id="body-color-input" value="#FFFFFF">
+                    <label for="bg-color-input">Background Color:</label>
+                    <input type="color" id="bg-color-input" value="#111111">
+                    <label>
+                        <input type="checkbox" id="outline-checkbox">
+                        Enable Outline
+                    </label>
+                    <label for="outline-color-input">Outline Color:</label>
+                    <input type="color" id="outline-color-input" value="#000000">
+                    
+                    <h4 class="sub-header">Skin Pattern</h4>
+                    <label for="skin-pattern-select">Pattern:</label>
+                    <select id="skin-pattern-select">
+                        <option value="solid">Solid</option>
+                        <option value="gradient">Gradient</option>
+                        <option value="stripes">Stripes</option>
+                    </select>
+                    <div id="pattern-options" class="hidden">
+                        <label for="pattern-color-2-input">Secondary Color:</label>
+                        <input type="color" id="pattern-color-2-input" value="#888888">
+                    </div>
+
+                    <h4 class="sub-header">Movement</h4>
+                    <label for="walk-speed-input">Walk Speed:</label>
+                    <input type="range" id="walk-speed-input" min="0.5" max="2.5" step="0.1" value="1">
+                    <label>
+                        <input type="checkbox" id="dash-enabled-checkbox">
+                        Enable Dash (Spacebar)
+                    </label>
+
+                    <h4 class="sub-header">Body Shape</h4>
+                     <label for="segment-density-input">Segment Density:</label>
+                    <input type="range" id="segment-density-input" min="20" max="80" value="50">
+
+                    <h4 class="sub-header">Eye Properties</h4>
+                    <label for="eye-side-offset-input">Eye Separation:</label>
+                    <input type="range" id="eye-side-offset-input" min="0" max="1" step="0.05" value="0.3">
+                    <label for="eye-forward-offset-input">Eye Position (Forward):</label>
+                    <input type="range" id="eye-forward-offset-input" min="0" max="1" step="0.05" value="0.4">
+                    <label for="eye-radius-input">Eye Size:</label>
+                    <input type="range" id="eye-radius-input" min="1" max="20" value="4">
+                </div>
+                <button id="done-btn">Done</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="procedural.js"></script>
+    <script type="module" src="main.js"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"4c6229722a6346bc8eb5cb0e5eae5d41","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>

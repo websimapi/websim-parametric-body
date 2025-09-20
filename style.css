@@ -1,0 +1,173 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background-color: #272D35;
+    color: white;
+    font-family: sans-serif;
+}
+
+#game-canvas {
+    display: block;
+}
+
+#game-view, #editor-view {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#game-view.hidden, #editor-view.hidden {
+    display: none;
+}
+
+#editor-canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: #2a2a2a; /* A different background for the editor */
+    cursor: grab;
+}
+
+#editor-canvas:active {
+    cursor: grabbing;
+}
+
+#controls-hint {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 14px;
+    pointer-events: none;
+}
+
+#editor-ui {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    max-height: calc(100% - 40px); /* ensure it doesn't overflow the viewport */
+    overflow: hidden;
+    width: 320px;
+}
+
+.editor-panel {
+    background-color: #222;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #444;
+    max-height: calc(100vh - 80px);
+    overflow-y: auto;
+    box-sizing: border-box;
+    -webkit-overflow-scrolling: touch;
+}
+
+.editor-panel h3 {
+    margin-top: 0;
+}
+
+.editor-panel p {
+    font-size: 14px;
+    color: #ccc;
+    margin-bottom: 20px;
+}
+
+.editor-panel button {
+    background-color: #444;
+    color: white;
+    border: 1px solid #666;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-right: 10px;
+    font-size: 14px;
+    margin-top: 5px; /* Added margin for better spacing */
+}
+
+.editor-panel button:hover {
+    background-color: #555;
+}
+
+#remove-segment-btn {
+    background-color: #8c3a3a;
+    border-color: #a75c5c;
+    margin-top: 10px;
+}
+#remove-segment-btn:hover {
+    background-color: #a75c5c;
+}
+
+#body-properties {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #444;
+}
+#body-properties h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+#body-properties .sub-header {
+    margin-top: 20px;
+}
+#body-properties label {
+    display: block; /* Changed to block for better layout */
+    margin-bottom: 5px; /* Spacing between labels */
+    cursor: pointer;
+}
+#body-properties input[type="checkbox"] {
+    margin-right: 8px;
+}
+#body-properties input[type="color"] {
+    margin-bottom: 10px;
+    width: 100%;
+    height: 30px;
+    padding: 0;
+    border: 1px solid #444;
+    cursor: pointer;
+    box-sizing: border-box; /* Add this */
+}
+
+
+#segment-properties {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #444;
+}
+
+#segment-properties.hidden {
+    display: none;
+}
+
+#segment-properties h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+#segment-properties label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+#segment-properties input {
+    width: 100%;
+}
+
+#head-properties.hidden {
+    display: none;
+}
+
+.editor-panel h5 {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    color: #ddd;
+}
+
+#pattern-options.hidden {
+    display: none;
+}
+
+#segment-properties label[for="leg-length-input"] {
+    margin-top: 10px;
+}
